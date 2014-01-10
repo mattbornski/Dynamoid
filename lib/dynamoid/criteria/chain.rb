@@ -13,7 +13,7 @@ module Dynamoid #:nodoc:
       #
       # @param [Class] source the class upon which the ultimate query will be performed.
       def initialize(source)
-        @query = {}
+        @query = HashWithIndifferentAccess.new()
         @source = source
         @consistent_read = false
         @scan_index_forward = true
